@@ -1,0 +1,38 @@
+<hello name="{{ name }}"></hello>
+<p>Start editing to see some magic happen :)</p>
+<form #inptForm="ngForm" (ngSubmit)="enrtData(inptForm.value)">
+  <label>First Name</label>
+  <input
+    type="text"
+    name="fName"
+    required
+    minlength="3"
+    #fName="ngModel"
+    ngModel
+  />
+  <span *ngIf="fName.invalid && fName.touched">Invalid First name</span>
+  <br /><br />
+
+  <label>Last Name </label>
+  <input type="text" name="lName" required #lName="ngModel" ngModel />
+  <span *ngIf="lName.invalid && lName.touched">Invalid last name</span
+  ><br /><br />
+
+  <label>DOB </label>
+  <input type="date" ngModel name="DOB" /> <br /><br />
+
+  <label>Favourite Color </label>
+  <input type="color" ngModel name="favColor" /> <br /><br />
+
+  <label>Hobbies </label> <br /><br />
+  <input type="checkbox" ngModel name="hobbi" value="dance" />Dance <br /><br />
+  <input type="checkbox" ngModel name="hobbi" value="sport" /> Sport Activies
+  <br /><br />
+  <input type="checkbox" ngModel name="hobbi" value="read" /> Reading Books <br /><br />
+  <input type="checkbox" ngModel name="hobbi" value="music" />Listen Music <br /><br />
+  <input type="checkbox" ngModel name="hobbi" value="knowledge" />Keep Grabing knowledge
+  <br /><br />
+  <input type="checkbox" ngModel name="hobbi" value="travel" /> travel <br /><br />
+  <button [disabled]="inptForm.invalid">submit</button>
+</form>
+<!--  ngModel #hobbi="ngModel" -->
